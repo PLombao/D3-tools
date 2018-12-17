@@ -1,0 +1,65 @@
+# Get an object by his class name, return a DOM node
+document.querySelector('.classname')
+
+# Get an object by his id, return a DOM node
+document.getElementById('idelement')
+
+We can use D3 Selectors and we'll get an array with D3 objects
+# select a class with a point
+var elem = d3.select('.classname')
+
+# select by id with a #
+d3.select('#idname')
+
+# select the child of a node
+d3.select('#idparent child')
+
+
+# if we want check the color of the element:
+elem.style("background-color")
+
+# change background-color:
+elem.style("background-color", "#757c81")
+
+IF YOU WANT TO SEARCH BY A NODE WITH MULTIPLE CLASS -> NO SPACES!!!
+
+#Change text from the main title class (with html method instead of text we can add properties)
+d3.select(".main-title").text("Gapminder World: China")
+
+# change atribute src
+d3.select('#header-logo img').attr('src', './assets/udacity_white.png')
+
+# Clear an area of a graph
+d3.select('.main')
+
+# Remove all elements under a node
+d3.selectAll(".main > *").remove();
+or 
+d3.select(".main").html("")
+
+
+D3 SCALES
+
+d3.scale.linear()
+.domain() # dominio de la variable
+.range()  # rango de pixels 
+
+# la variable y esta invertida, hay q ir de mas pixels a menos
+
+# add a svg
+var svg = d3.select('.main').append('svg');
+
+# change sizes
+svg.attr('width',600).attr('height',300);
+
+# add a scale for vars x and y
+var y=d3.scale.linear().domain([15,90]).range([250,0]);
+var x=d3.scale.log().domain([0,1000000]).range([0,600]);
+
+# CIRCLES
+# size parameter
+radio = sqrt(Variable Size)
+var r = d3.scale.sqrt().domain([52070, 1380000000]).range([10,50]);
+
+# Add a circle
+svg.append('circle').attr('fill', 'red'). attr('r', r(1380000000)).attr('cx', x(13330)).attr('cy',y(77))
