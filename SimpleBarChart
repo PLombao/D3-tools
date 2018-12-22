@@ -30,6 +30,7 @@
           var myChart = new dimple.chart(svg, data);
           var x = myChart.addTimeAxis("x", "year"); 
           myChart.addMeasureAxis("y", "attendance");
+	  x.dateParseFormat = "%Y";
           myChart.addSeries(null, dimple.plot.bar);
           myChart.draw();
         };
