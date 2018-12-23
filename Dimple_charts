@@ -1,0 +1,10 @@
+Scatter + line
+
+var myChart = new dimple.chart(svg, data);
+var x = myChart.addTimeAxis("x", "year"); 
+myChart.addMeasureAxis("y", "attendance");
+x.dateParseFormat = "%Y";
+x.timeInterval = 4;
+myChart.addSeries(null, dimple.plot.line);
+myChart.addSeries(null, dimple.plot.scatter);
+myChart.draw();
