@@ -17,6 +17,8 @@ d3.select('#idname')
 # select the child of a node
 d3.select('#idparent child')
 
+# check data in tabular form
+console.table(data)
 
 # if we want check the color of the element:
 elem.style("background-color")
